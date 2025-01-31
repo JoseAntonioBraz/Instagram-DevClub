@@ -1,11 +1,8 @@
-/* Faz o reset do CSS na pagina */
+/* Reset padrão */
 * {
-    /* Define a margem externa de todos os elementos  */
-  margin: 0;
-  /* A propriedade padding define o espaçamento interno de um elemento, ou seja, a distância entre o conteúdo do elemento e sua borda. */
-  padding: 0;
-  /* Essa propriedade altera a forma como as dimensões dos elementos são calculadas ou seja, o tamanho do elemento não cresce além do esperado. */
-  box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -16,18 +13,19 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* Ponto e o nome da class chama a class para iniciar a estilização */
+
+/* Estilização da imagem do celular */
 .img-celular {
-    /* Ajusta a largura da imagem */
     width: 450px;
-    margin-bottom: 164px;
+    margin-bottom: 243px;
 }
 
+/* Estilização da logo */
 .insta-logo {
     margin-bottom: 20px;
 }
 
-.container-form{
+.container-form {
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
@@ -37,27 +35,74 @@ body {
 
 .container-itens {
     width: 350px;
-    
 }
 
-input {
-    height: 36px;
-    outline: none;
+/* Estilização dos inputs */
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    padding-left: 5px;
-    margin-top: 5px;
-    color: #262626;
+    background-color: #fafafa;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
+.input-container input:focus {
+    border-color: #ccc;
+}
+
+/* Label que se move para cima */
+.input-container label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input:focus + label,
+.input-container input:valid + label {
+    top: 5px;
+    font-size: 12px;
+    color: #8d8d8d;
+}
+
+/* Botão "Mostrar" senha */
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #0095f6;
+    cursor: pointer;
+    display: none;
+}
+
+/* Botão de login */
 button {
     background: #0095f6;
     height: 30px;
     border-radius: 3px;
     border: none;
     margin-top: 20px;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
 }
+
+/* Linha divisória */
 .ou-entre-linhas {
     display: flex;
     align-items: center;
@@ -79,7 +124,8 @@ button {
     font-weight: bold;
 }
 
-.login-facebook{
+/* Links de login */
+.login-facebook {
     color: #385185;
     font-weight: bold;
     text-align: center;
@@ -101,6 +147,6 @@ button {
     height: 5vh;
     text-align: center;
     align-items: center;
-    padding-left: 50px;
+    justify-content: center;
     background: #ffffff;
 }
